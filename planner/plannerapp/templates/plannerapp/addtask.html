@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel = "stylesheet" href="{% static 'css/style.css' %}">
+        <table>
+            <tr>
+                <td class="app">PlannerApp</td>
+                <td class="user">
+                    {% if user.is_authenticated %}
+                    {{ user }}|<a class="logout" href="{% url 'logout' %}">Out</a>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+
+    </head>
+    <body>
+        <form method="POST" class="form">
+            {% csrf_token %}
+            {{ add_form.as_p }}
+            <button class="addbutton" type="submit">Save</button>
+        </form>
+    </body>
+</html>

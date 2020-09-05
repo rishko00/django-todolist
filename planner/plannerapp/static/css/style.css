@@ -1,0 +1,84 @@
+body{
+    background: url('/static/img/background.jpg');
+    text-align: center;
+}
+
+h2{
+    color: white;
+}
+
+.add_button{
+    border-radius: 30px;
+    color:blue;
+    width:500px;
+    height: 50px;
+}
+
+.add_button:hover{
+    background-color: rgb(255,150,10);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+table {
+    width: 100%;
+    color:white;
+    margin-bottom: 20px;
+}
+
+tr {
+    vertical-align: top;
+}
+
+.app {
+    text-align: left;
+    font: bold 32px cursive;
+}
+
+.user {
+    text-align:right;
+    font: bold 22px system-ui;
+}
+
+.task{
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-align: left;
+    border: 3px solid lightgray;
+    border-left: 6px solid orange;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+.task:hover{
+    background-color: lightslategrey;
+}
+
+.task .title{
+    font: bold;
+    font-size: 28px;
+}
+
+.form{
+    color:white;
+    font: bold 14px system-ui;
+}
+
+textarea{
+    border-radius: 10px;
+    resize: none;
+}
+
+.addbutton{
+    border-radius: 30px;
+    color:blue;
+    width:70px;
+    height: 30px;
+}
+
+.addbutton:hover{
+    background-color: rgb(255,150,10);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+}

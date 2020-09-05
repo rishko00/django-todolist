@@ -1,0 +1,57 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel = "stylesheet" href="{% static 'css/style.css' %}">
+        <table>
+            <tr>
+                <td class="app">PlannerApp</td>
+                <td class="user">
+                    {% if user.is_authenticated %}
+                    {{ user }}|<a class="logout" href="{% url 'logout' %}">Out</a>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+
+    </head>
+    <body>
+        <form action = "{% url 'add_task' %}">
+            <button class="add_button" type="submit">Add task</button>
+        </form>
+
+        <h2>Завдання на сьогодні:</h2>
+        {% for task in tasks %}
+        <div class = "task">
+            <div class = "title">{{ task.title }}</div>
+            <div class = "info">{{ task.info }}</div>
+            <div class = "date">{{ task.date }}</div>
+         <!--  <form method="POST" action="{% url 'check_task' %}">
+                {% csrf_token %}
+                <span class="check">
+                    <input type="checkbox" name="checkedbox[]" value="{{ task.id }}" {% if task.status %} checked {% endif %}/>
+                </span>
+            </form> -->
+        </div>
+        {% endfor %}
+
+        <h2>Завдання на завтра:</h2>
+        {% for task in tomorrow_tasks %}
+            <div class = "task">
+                <div class = "title">{{ task.title }}</div>
+                <div class = "info">{{ task.info }}</div>
+                <div class = "date">{{ task.date }}</div>
+            </div>
+        {% endfor %}
+
+        <h2>Завдання на наступні 7 днів:</h2>
+        {% for task in week_tasks %}
+            <div class="task">
+                <div class = "title">{{ task.title }}</div>
+                <div class = "info">{{ task.info }}</div>
+                <div class = "date">{{ task.date }}</div>
+            </div>
+        {% endfor %}
+
+    </body>
+</html>

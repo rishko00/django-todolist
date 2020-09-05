@@ -1,0 +1,11 @@
+{% extends 'plannerapp/tasks.html' %}
+{% block content %}
+
+            {% for task in date_tasks %}
+            <div class = "task">
+                <div class = "title">{{ task.title }}</div>
+                <div class = "info">{{ task.info }}</div>
+                <div class = "date">{{ task.date }}</div>
+            </div>
+            {% endfor %}
+{% endblock %}
